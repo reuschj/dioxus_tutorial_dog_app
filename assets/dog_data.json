@@ -1,0 +1,67 @@
+{
+  "dogs": [
+    {
+      "id": "{550e8400-e29b-41d4-a716-446655440000}",
+      "name": "Toffee",
+      "breed": "Corgi",
+      "description": "A cute little butt.",
+      "image": "https://getwallpapers.com/wallpaper/full/d/c/9/1182034-corgi-puppies-wallpaper-2048x2048-for-samsung.jpg"
+    },
+    {
+      "id": "{6ba7b810-9dad-11d1-80b4-00c04fd430c8}",
+      "name": "Dude",
+      "breed": "Sheperd",
+      "description": "He's dumber than a rock.",
+      "image": "https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTk2NzIzMTQ2NzMxMTAzMjUw/11-dogs-like-german-shepherd.png"
+    },
+    {
+      "id": "{7ba7b810-9dad-11d1-80b4-00c04fd430c8}",
+      "name": "Teddy",
+      "breed": "Retriever",
+      "description": "The famous YouTube dog.",
+      "image": "https://www.publicdomainpictures.net/pictures/40000/velka/golden-retriever-dog-1364426710r9x.jpg"
+    },
+    {
+      "id": "{8ba7b810-9dad-11d1-80b4-00c04fd430c8}",
+      "name": "Fufu",
+      "breed": "Poodle",
+      "description": "Yippy and annoying.",
+      "image": "https://www.thesprucepets.com/thmb/0QOPuGwY7G3yPiUZDa_5jTts40Y=/2912x2912/smart/filters:no_upscale()/white-poodle-playing-in-the-yard--182178740-59af2b3fc4124400107c9da3.jpg"
+    },
+    {
+      "id": "{9ba7b810-9dad-11d1-80b4-00c04fd430c8}",
+      "name": "Barker",
+      "breed": "Lab",
+      "description": "Likes playing catch.",
+      "image": "https://i.natgeofe.com/n/53cb5683-66c1-4840-ab1f-bd313840e78f/01-chocolate-lab-nationalgeographic_1154144_square.jpg"
+    },
+    {
+      "id": "{aba7b810-9dad-11d1-80b4-00c04fd430c8}",
+      "name": "Molly",
+      "breed": "Husky",
+      "description": "Loves Alaska and sleds.",
+      "image": "https://thehappypuppysite.com/wp-content/uploads/2017/12/siberian6.jpg"
+    },
+    {
+      "id": "{bba7b810-9dad-11d1-80b4-00c04fd430c8}",
+      "name": "Spot",
+      "breed": "Dalmation",
+      "description": "Cute and spotted.",
+      "image": "https://www.petcircle.com.au/petcircle-assets/images/blog/dalmatian-breed-guide-4.jpg"
+    },
+    {
+      "id": "{cba7b810-9dad-11d1-80b4-00c04fd430c8}",
+      "name": "Max",
+      "breed": "Retriever",
+      "description": "Who's a good boy?",
+      "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.breedyourdog.com%2Fuploads%2Flisting_images%2F35936%2F102947%2Fbig_3EE9018F-5573-4E93-8A65-6F1FFE49A000.jpeg&f=1&nofb=1&ipt=16676dcb932add5f84bf0c511465ebba8b8f1918eef787ec081380500b1e7949&ipo=images"
+    },
+    {
+      "id": "{dba7b810-9dad-11d1-80b4-00c04fd430c8}",
+      "name": "Boingo",
+      "breed": "Corgi",
+      "description": "Too cute.",
+      "image": "https://cdn.fotofits.com/responsive/1200x1200/petzlover/gallery/img/l/corgi-885148.jpeg"
+    }
+  ]
+}

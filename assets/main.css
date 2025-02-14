@@ -1,0 +1,335 @@
+:root {
+    --background-color: #ddeeee;
+    --text-color: #051115;
+    --title-primary: #ed8c00;
+    --title: #000000cc;
+    --title-bright: #ed8c00ff;
+    --subtitle: #00000099;
+    --subtitle-bright: #ed8c00dd;
+    --description: #00000077;
+    --borders-bright: #ed8c00cc;
+    --borders-dull: #00000055;
+    --background-tile: #ffff0015;
+    --header-tile-bright: #ed8c0033;
+    --header-tile-dull: #00000011;
+    --legend: #00000099;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #051115;
+        --text-color: #ddeeee;
+        --title-primary: #ffff00;
+        --title: #ffffffcc;
+        --title-bright: #ffff00cc;
+        --subtitle: #ffffff99;
+        --subtitle-bright: #ffff0099;
+        --description: #ffffff77;
+        --borders-bright: #ffff0099;
+        --borders-dull: #ffffff22;
+        --background-tile: #ffffff05;
+        --header-tile-bright: #ffff0033;
+        --header-tile-dull: #ffffff11;
+        --legend: #ffffff99;
+    }
+}
+
+body {
+    font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.system {
+    /* This will depend on the user's system preferences */
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* App-wide styling */
+.app {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+}
+
+#hero {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#links {
+    width: 400px;
+    text-align: left;
+    font-size: x-large;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#links a {
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    margin: 10px 0px;
+    border: white 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#links a:hover {
+    background-color: #1f1f1f;
+    cursor: pointer;
+}
+
+#header {
+    max-width: 1200px;
+}
+
+#maintitle {
+    font-family: "Atma", "Roboto", "Segoe UI", Tahoma, Geneva, Verdana,
+        sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    color: var(--title-primary);
+    margin-bottom: 0;
+}
+
+#maindesc {
+    font-size: 1rem;
+    text-align: center;
+}
+
+#controlbox {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 2rem 0 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--borders-dull);
+}
+
+#sortbycontrol fieldset {
+    display: flex;
+    flex-direction: column;
+    border-width: 0;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+#sortbycontrol legend {
+    color: var(--legend);
+    font-style: italic;
+}
+
+#sortbycontrol div {
+    display: flex;
+    margin: 0 1rem 0 0;
+}
+
+#sortbycontrol input {
+    display: flex;
+    margin: 0.15rem 0.25rem 0 0;
+}
+
+#breedfilter {
+    display: flex;
+}
+
+#breedfilter fieldset {
+    display: flex;
+    flex-direction: column;
+    border-width: 0;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 0.5rem;
+}
+
+#breedfilter legend {
+    color: var(--legend);
+    font-style: italic;
+}
+
+.dogsview {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+    padding: 2rem;
+    margin: auto;
+    gap: 1rem;
+}
+
+.dogtile {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-tile);
+    border-color: var(--borders-dull);
+    border-width: 2px;
+    border-style: solid;
+    min-width: 20rem;
+    max-width: 24rem;
+    min-height: 31rem;
+    max-height: 31rem;
+    border-radius: 1rem;
+    align-items: center;
+}
+
+.dogtile.favorite {
+    background-color: var(--background-tile);
+    border-color: var(--borders-bright);
+    border-width: 3px;
+    border-style: solid;
+    box-shadow: var(--borders-bright) 0 0 0.5rem;
+}
+
+.dogtile.mini {
+    min-width: 8rem;
+    max-width: 16rem;
+    min-height: 8rem;
+    max-height: 16rem;
+}
+
+.dogtile .header {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--header-tile-dull);
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    width: 100%;
+    align-items: center;
+}
+
+.dogtile.favorite .header {
+    background-color: var(--header-tile-bright);
+}
+
+.dogtile.mini .header {
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.title {
+    color: var(--title);
+    font-family: "Atma", "Roboto", "Segoe UI", Tahoma, Geneva, Verdana,
+        sans-serif;
+    font-size: 2em;
+}
+
+.archived .title {
+    margin: 0.25rem 2rem;
+    margin-block-end: 0;
+}
+
+.dogtile .title {
+    display: flex;
+    color: var(--title);
+    margin: 0.25rem 1rem 0 1rem;
+    text-align: center;
+    font-family: "Atma", "Roboto", "Segoe UI", Tahoma, Geneva, Verdana,
+        sans-serif;
+    font-size: 2em;
+}
+
+.dogtile.favorite .title {
+    color: var(--title-bright);
+}
+
+.dogtile.mini .title {
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.dogtile.favorite .title::after {
+    content: "⭐️";
+    padding-left: 0.5rem;
+}
+
+.dogtile.favorite .title::before {
+    content: "⭐️";
+    padding-right: 0.5rem;
+}
+
+.dogtile .subtitle {
+    display: flex;
+    font-weight: normal;
+    font-style: italic;
+    color: var(--subtitle);
+    margin: -0.5rem 0 0.5rem 0;
+    font-family: "Schoolbell", "Roboto", "Segoe UI", Tahoma, Geneva, Verdana,
+        sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.dogtile.favorite .subtitle {
+    color: var(--subtitle-bright);
+    text-align: left;
+}
+
+.dogtile.mini .subtitle {
+    margin: 0.25rem 0 0 0;
+    font-size: 1rem;
+}
+
+.dogtile .description {
+    display: flex;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: var(--description);
+    margin: 1rem;
+}
+
+.dogimage {
+    display: flex;
+    width: 20rem;
+    height: 20rem;
+    max-height: 20rem;
+    object-fit: cover;
+}
+
+.mini .dogimage {
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    max-height: 10rem;
+    object-fit: cover;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.buttons button {
+    padding: 0.32rem 1rem 0.32rem 1rem;
+    font-size: 0.95rem;
+}
+
+.mini .buttons button {
+    padding: 0.25rem 1rem 0.25rem 1rem;
+    font-size: 0.75rem;
+}
