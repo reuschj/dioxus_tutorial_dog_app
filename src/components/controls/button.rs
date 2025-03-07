@@ -72,6 +72,11 @@ pub fn Button(props: ButtonProps) -> Element {
                     ButtonMode::Apply => id_set.write().insert(id),
                     ButtonMode::Remove => id_set.write().remove(&id),
                 };
+                match props.button_type {
+                    ButtonType::Archive => ctx.read().save_archived(),
+                    ButtonType::Favorite => ctx.read().save_favorites(),
+                };
+
             },
             match props.button_type {
                 ButtonType::Archive => match props.mode {

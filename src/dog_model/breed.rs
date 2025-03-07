@@ -12,6 +12,21 @@ pub enum Breed {
     Other(String),
 }
 
+impl Breed {
+    pub fn get_value(&self) -> String {
+        match self {
+            Breed::Corgi => "corgi".to_string(),
+            Breed::Dalmation => "dalmation".to_string(),
+            Breed::Lab => "lab".to_string(),
+            Breed::Husky => "husky".to_string(),
+            Breed::Poodle => "poodle".to_string(),
+            Breed::Sheperd => "sheperd".to_string(),
+            Breed::Retriever => "retriever".to_string(),
+            Breed::Other(breed) => breed.to_lowercase(),
+        }
+    }
+}
+
 impl std::fmt::Display for Breed {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
