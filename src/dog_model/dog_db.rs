@@ -3,7 +3,7 @@ use std::{
     sync::{Arc, Mutex},
 };
 
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
 use super::dog::Dog;
@@ -87,6 +87,48 @@ impl PartialEq for DogDb {
             }
             _ => false,
         }
+    }
+}
+
+impl<'de> Serialize for DogDb {
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        #[derive(Serialize)]
+        struct DogList {
+            dogs: Vec<Dog>,
+        }
+
+        let db = self
+            .db
+            .lock()
+            .map_err(|_| serde::ser::Error::custom("lock error"))?;
+        let dogs: Vec<Dog> = db.values().cloned().collect();
+        let dog_list = DogList { dogs };
+        dog_list.serialize(serializer)
+    }
+}
+
+impl<'de> Deserialize<'de> for DogDb {
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        #[derive(Deserialize)]
+        struct DogList {
+            dogs: Vec<Dog>,
+        }
+
+        let dog_list = DogList::deserialize(deserializer)?;
+        let db = DogDb::new();
+
+        for dog in dog_list.dogs {
+            db.add(dog)
+                .map_err(|e| serde::de::Error::custom(format!("{}", e)))?;
+        }
+
+        Result::Ok(db)
     }
 }
 

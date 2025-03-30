@@ -2,6 +2,13 @@ use dioxus::prelude::*;
 
 use crate::dog_model::breed::Breed;
 
+fn get_value(selected: &Signal<Option<Breed>>) -> String {
+    match &*selected.read() {
+        Some(breed) => breed.get_value(),
+        None => String::from("none"),
+    }
+}
+
 #[component]
 pub fn BreedFilter(mut selected: Signal<Option<Breed>>) -> Element {
     let name = "breed_filter";
@@ -10,8 +17,8 @@ pub fn BreedFilter(mut selected: Signal<Option<Breed>>) -> Element {
             id: "breedfilter",
             form {
                 fieldset {
-                    legend { "Filter by breed" }
-                    select { name, id: name,
+                    legend { "Show breed" }
+                    select { name, id: name, value: get_value(&selected),
                         onchange: move |e| {
                             selected.set(Breed::from_raw_str(e.value()));
                         },
